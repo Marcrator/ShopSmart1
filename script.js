@@ -196,6 +196,8 @@ function renderProducts() {
   const list = document.getElementById("productList");
   list.innerHTML = "";
 
+  const isAdmin = currentUser && currentUser.email === ADMIN_EMAIL;
+
   products
     .filter(p => p.name.toLowerCase().includes(search))
     .forEach(p => {
@@ -204,12 +206,20 @@ function renderProducts() {
           <img src="${p.image}">
           <h3>${p.name}</h3>
           <p>₱${p.price}</p>
-          <button onclick="addToCart(${p.id})">Add to Cart</button>
-          
+
+          ${!isAdmin ? `
+            <button onclick="addToCart(${p.id})">Add to Cart</button>
+          ` : `
+            <button onclick="editProduct(${p.id})">Edit</button>
+            <button onclick="deleteProduct(${p.id})" style="background:#d9534f;color:#fff;">
+              Delete
+            </button>
+          `}
         </div>
       `;
     });
 }
+
 
 // =============== CART ===============
 function addToCart(id) {
@@ -320,6 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderUI();
   showLogin();
 });
+
 
 
 
