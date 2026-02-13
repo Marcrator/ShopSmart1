@@ -11,7 +11,7 @@ let products = [
   { id: 1, name: "Laptop", price: 25000, image: "images/laptop.jpg" },
   { id: 2, name: "Shoe", price: 3500, image: "images/shoe.jpg" },
   { id: 3, name: "Book", price: 500, image: "images/book.jpg" },
-  { id: 4, name: "Bag", price: 2000, image: "images/bag.jpg" },
+  { id: 4, name: "Bag", price: 1599, image: "images/bag.jpg" },
   { id: 5, name: "Watch", price: 5000, image: "images/watch.jpg" },
   { id: 6, name: "Smart Watch", price: 9000, image: "images/smartwatch.jpg" },
   { id: 7, name: "Monitor", price: 15000, image: "images/Monitor.jpg" },
@@ -19,9 +19,9 @@ let products = [
   { id: 9, name: "Tablet", price: 15000, image: "images/tablet.jpg" },
   { id: 10, name: "Perfume", price: 149, image: "images/perfume.jpg" },
   { id: 11, name: "Pants", price: 800, image: "images/pants.jpg" },
-  { id: 11, name: "Portable Fan", price: 800, image: "images/fan.jpg" },
-  { id: 11, name: "Phone Case", price: 800, image: "images/phonecase.jpg" },
-  { id: 11, name: "Lamp", price: 800, image: "images/lamp.jpg" },
+  { id: 11, name: "Portable Fan", price: 989, image: "images/fan.jpg" },
+  { id: 11, name: "Phone Case", price: 138, image: "images/phonecase.jpg" },
+  { id: 11, name: "Lamp", price: 600, image: "images/lamp.jpg" },
 ];
  localStorage.setItem("products", JSON.stringify(products));
 
@@ -393,6 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderUI();
   showLogin();
 });
+
 
 
 
