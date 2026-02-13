@@ -7,7 +7,7 @@ let users = JSON.parse(localStorage.getItem("users")) || [];
 let reviews = JSON.parse(localStorage.getItem("reviews")) || {};
 let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-let products = JSON.parse(localStorage.getItem("products")) || [
+let products = [
   { id: 1, name: "Laptop", price: 25000, image: "images/laptop.jpg" },
   { id: 2, name: "Shoe", price: 3500, image: "images/shoe.jpg" },
   { id: 3, name: "Book", price: 500, image: "images/book.jpg" },
@@ -18,6 +18,7 @@ let products = JSON.parse(localStorage.getItem("products")) || [
   { id: 8, name: "Phone", price: 10000, image: "images/phone.jpg" },
   { id: 9, name: "Tablet", price: 15000, image: "images/tablet.jpg" },
 ];
+ localStorage.setItem("products", JSON.stringify(products));
 
 
 let currentUser = null;
@@ -205,35 +206,44 @@ function renderProducts() {
     .forEach(p => {
       const div = document.createElement("div");
       div.className = "product-card";
+
       div.innerHTML = `
         <img src="${p.image}">
         <h3>${p.name}</h3>
-        <p>₱${p.price}</p>
+        <div class="price">₱${p.price.toLocaleString()}</div>
+        <div class="actions"></div>
       `;
+
+      const actions = div.querySelector(".actions");
 
       if (isAdmin) {
         const editBtn = document.createElement("button");
         editBtn.textContent = "Edit";
-        editBtn.addEventListener("click", () => editProduct(p.id));
+        editBtn.className = "edit-btn";
+        editBtn.onclick = () => editProduct(p.id);
 
         const delBtn = document.createElement("button");
         delBtn.textContent = "Delete";
-        delBtn.style.background = "#d9534f";
-        delBtn.style.color = "#fff";
-        delBtn.addEventListener("click", () => deleteProduct(p.id));
+        delBtn.className = "delete-btn";
+        delBtn.onclick = () => deleteProduct(p.id);
 
-        div.appendChild(editBtn);
-        div.appendChild(delBtn);
+        actions.appendChild(editBtn);
+        actions.appendChild(delBtn);
       } else {
         const cartBtn = document.createElement("button");
         cartBtn.textContent = "Add to Cart";
-        cartBtn.addEventListener("click", () => addToCart(p.id));
-        div.appendChild(cartBtn);
+        cartBtn.className = "cart-btn";
+        cartBtn.onclick = () => addToCart(p.id);
+
+        actions.appendChild(cartBtn);
       }
 
       list.appendChild(div);
     });
 }
+
+
+
 
 function editProduct(id) {
   const product = products.find(p => p.id === id);
@@ -378,14 +388,3 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderUI();
   showLogin();
 });
-
-
-
-
-
-
-
-
-
-
-
