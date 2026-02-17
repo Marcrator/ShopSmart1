@@ -27,6 +27,7 @@ let products = [
   { id: 17, name: "Clog", price: 899, image: "images/clog.jpg" },
   { id: 18, name: "Mini Fan", price: 300, image: "images/fan.jpg" },
   { id: 19, name: "Phone Holder", price: 300, image: "images/holder.jpg" },
+  { id: 20, name: "speaker", price: 300, image: "images/speaker.jpg" },
 ];
  localStorage.setItem("products", JSON.stringify(products));
 
@@ -398,6 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderUI();
   showLogin();
 });
+
 
 
 
