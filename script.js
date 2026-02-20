@@ -42,7 +42,6 @@ let products = [
   { id: 31, name: "Racket", price: 1200, image: "images/rackets.jpg" },
   { id: 32, name: "Weight Scale", price: 300, image: "images/weight scale.jpg" },
   { id: 33, name: "Headset", price: 300, image: "images/headset.jpg" },
-
 ];
  localStorage.setItem("products", JSON.stringify(products));
 
@@ -434,6 +433,7 @@ if (currentUser) {
   showHome();
 }
 });
+
 
 
 
