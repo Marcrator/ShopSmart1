@@ -40,6 +40,7 @@ let products = [
   { id: 22, name: "Polo", price: 280, image: "images/polo.jpg" },
   { id: 22, name: "Aquaflask", price: 1000, image: "images/tumbler.jpg" },
   { id: 22, name: "Racket", price: 1200, image: "images/rackets.jpg" },
+  { id: 22, name: "Weight Scale", price: 300, image: "images/weight scale.jpg" },
 ];
  localStorage.setItem("products", JSON.stringify(products));
 
@@ -431,6 +432,7 @@ if (currentUser) {
   showHome();
 }
 });
+
 
 
 
