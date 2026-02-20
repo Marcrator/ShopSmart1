@@ -30,6 +30,12 @@ let products = [
   { id: 19, name: "Phone Holder", price: 300, image: "images/holder.jpg" },
   { id: 20, name: "speaker", price: 300, image: "images/speaker.jpg" },
   { id: 21, name: "Cap", price: 200, image: "images/cap.jpg" },
+  { id: 22, name: "Blet", price: 750, image: "images/belt.jpg" },
+  { id: 22, name: "COllar", price: 140, image: "images/collar.jpg" },
+  { id: 22, name: "Leash", price: 200, image: "images/leash.jpg" },
+  { id: 22, name: "Electric Kettle", price: 860, image: "images/kettle.jpg" },
+  { id: 22, name: "Blender", price: 1000, image: "images/blender.jpg" },
+  { id: 22, name: "Mixer", price: 870, image: "images/mixer.jpg" },
   { id: 22, name: "SCHOOL BAG", price: 200, image: "images/school bag.jpg" },
 ];
  localStorage.setItem("products", JSON.stringify(products));
@@ -414,6 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showLogin();
   showHome();
 });
+
 
 
 
