@@ -422,10 +422,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  updateHeaderUI();
+ updateHeaderUI();
+
+// Show home if not logged in, else show shop
+if (currentUser) {
+  showShop();
+} else {
   showHome();
-  showLogin();
+}
 });
+
 
 
 
